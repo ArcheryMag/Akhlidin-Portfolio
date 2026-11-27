@@ -1,0 +1,252 @@
+/* 1. Стили для всей страницы */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /*Меняем шрифт на современный */
+    background-color: #f7f4f4; /* Светло-серый приятный фон */
+    color: #0f0f0f; /* Темно-серый цвет текста вместо чисто черного (так лешче глазам) */
+    line-height: 1.6; /* Увеличимаем расстояние между строками текста */
+    max-width: 800px; /* Ограничиваем максимальную ширину сайта */
+    margin: 0 auto; /* Центрируем весь сайт по центру экрана */
+    padding: 20px; /* Добавляем отступы от краев экрана */
+}
+/* 2. Стили для заголовков */
+h1, h2, h3 {
+    color: #25502f; /* Красивый темно-синии цвет для заголовков */
+}
+h1{
+    font-size: 2.5rem; /* Делаем главный заголовок крупнее */
+    margin-bottom: 5px;
+}
+/* 3. Стили для навигации (меню) */
+nav {
+    background-color: #25502f; /* Темный фон для меню */
+    padding: 10px; /* Внутренние отступы вокруг ссылок */
+    border-radius: 5px; /* Скругляем углы у блока меню */
+}
+nav a {
+    color: #ffffff; /* Белый цвет ссылок */
+    text-decoration: none; /* Убераем стандартное подчеркивание у ссылок */
+    font-weight: bold;
+    padding: 0 10px;
+}
+nav a:hover {
+    color: #1abc9c; /* При наведении курсора ссылка станет бирюзовой */
+}
+/* 4. Стили для секций (разделов) */
+section {
+    background: #ffffff; /* Белый фон для каждго блока */
+    padding: 20px; /* Отступы внутри блоков */
+    margin: 20px 0; /* Расстояние между блоками */
+    border-radius: 8px; /* Скругляем углы блоков */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Добавляем мягкую тень */
+}
+/* 5. Стили для таблицы */
+table {
+    width: 100%; /* Растягиваем таблицу на всю ширину блока */
+    border-collapse: collapse; /* Объединяем двойные рамки в одну тонкую */
+    margin-top: 15px;
+}
+th, td {
+    padding: 12px; /* Увеличиваем ячейки, чтобы текст "дышал" */
+    text-align: left;
+    border-bottom: 1px solud #ddd; /* Оставляем только аккуратные нижние линии */
+}
+th {
+    background-color: #ffffff;
+    color: #2c3e50;
+}
+/* 6. Стили для кнопок */
+button {
+    background-color: #25502f; /* Бирюзовая кнопка */
+    color: white;
+    border: none; /* Убираем стандартную уродливую рамку */
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer; /* Меняем курсор на "пальчик" при наведении */
+}
+button:hover {
+    background-color: #16a085; /* При наведении кнопка станет чуть темнее */
+}
+/* Создаем специальный класс для текстовых карточек */
+.alert-box {
+    background-color: #ffeaa7; /* Светло-желтый фон */
+    border-left: 5px solid #fdcb6e; /*Желтая полоса слева */
+
+    /* РАБОТА С ОТСТУПАМИ */
+    padding: 20px; /* Внутренний отступ: текст отодвигается от краев рамки */
+    margin: 30px 0; /* Внешний отступ: 30px сверху и снизу, чтобы отодвинуть другие блоки */
+}
+/* Селектор класса (начинается с точки) */
+.text-highlight {
+    color: #e74c3c; /* Делает текст красным */
+    font-weight: bold; /* Делает текст жирным */
+}
+.badge {
+    background-color: #2ecc71; /* Зеленый фон */
+    color: white; /* Белый текст */
+    padding: 3px 8px; /* Небольшие внутренние отступы */
+    border-radius: 3px; /* Легкое скругление */
+    font-size: 0.8rem; /* Уменьшенный размер шрифта */
+}
+/* Селектор идентификатора (начинается с решетки) */
+#special-offer {
+    background-color: #dfe6e9; /* Серый фон */
+    border: 2px dashed #b2bec3; /* Пунктирная рамка */
+    padding: 15px;
+    text-align: center; /* Выравнивание текста по центру */
+}
+/* 1. Делаем контейнер флексом */
+.profile-container {
+    display: flex; /* Включаем Flexbox */
+    align-items: center; /* Выравниваем элементы по вертикали (по центру) */
+    gap: 20px; /* Задаем фиксированное расстояние (отступ) между элементами */
+}
+/* 2. Немного стилизуем картинку внутри этого контейнера */
+.profile-avatar {
+    border-radius: 50%; /* Делаем аватарку идеально круглой */
+    border: 3px solid #25502f; /* Добавляем красивую бирюзовую рамку */
+    flex-shrink: 5; /* Запрещаем картинке сжиматься,если экран станет маленьким */
+}
+
+/* Стили формы */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 600px) {
+    
+    /* 1. Перестраиваем меню навигации в столбик */
+    nav {
+        flex-direction: column; /* Элементы встают друг под друга */
+        text-align: center; /* Текст ссылок по центру */
+        gap: 10px; /* Расстояние между ссылками */
+    }
+
+    /* 2. Перестраиваем блок "Обо мне" */
+    .profile-container {
+        flex-direction: column; /* Картинка теперь будет НАД текстом, а не сбоку */
+        text-align: center; /* Центрируем текст биографии */
+    }
+    
+    /* Добавим небольшой отступе снизу таблицы, чтобы её можно было скроллить, если она не влезает */
+    table {
+        display: block;
+        overflow-x: auto; /* Включает горизонтальную прокрутку для таблицы на смартфонах */
+    }
+}
+
+nav a {
+    transition: color 0.3s ease; /*Анимируемтолько цвет текста*/
+}
+
+button {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:active{
+    transform: scale(0.90); /*При клике кнопка будет слегка визуально вдавливаться*/
+}
+
+section {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /*Плавное изменение трансформации и тени*/
+}
+
+section:hover {
+    transform: translateY(-5px); /*Карточка плавно приподнимается вверх на 5 пикселей*/
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) /*Тень становится мягче и больше*/
+}
+
+/*Делает скролл плавной*/
+html {
+  scroll-behavior: smooth;
+}
+
+/*Стили которые применятся, когда у body появится этот класс*/
+body.dark-theme {
+    background-color: #2f3640; /*Темный фон страницы*/
+    color: #f5f6fa; /*Светлый текст*/
+}
+
+/*Меняем фон карточек в темной теме*/
+
+/* Плавное переключение между светлой и тёмной темами */
+body {
+    transition: background-color 0.9s ease, color 0.9s ease;
+}
+
+section {
+    transition: background-color 0.9s ease,
+                color 0.9s ease,
+                box-shadow 0.9s ease,
+                transform 0.3s ease;
+}
+
+th {
+    transition: background-color 0.9s ease, color 0.9s ease;
+}
+
+
+/*Корректируем цвета заголовков и шапки в темной теме*/
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3 {
+    color: #3f8850
+}
+body.dark-theme th {
+    background-color: #2f3640;
+    color: #fdfdfd
+}
+
+
+
+
+
+
+
+
+/* Цвета блоков для темной темы */
+
+body.dark-theme section {
+    background-color: #353b48;
+    color: #f5f6fa;
+}
+
+body.dark-theme .alert-box {
+    background-color: #353b48;
+    color: #f5f6fa;
+    border-left-color: #f1c40f;
+}
+
+body.dark-theme #special-offer {
+    background-color: #353b48;
+    color: #f5f6fa;
+    border-color: #718093;
+}
+
+body.dark-theme th,
+body.dark-theme td {
+    background-color: #353b48;
+    color: #f5f6fa;
+    border-color: #718093;
+}
+
+body.dark-theme input,
+body.dark-theme textarea {
+    background-color: #353b48;
+    color: #f5f6fa;
+    border-color: #718093;
+}
+
+body.dark-theme input::placeholder,
+body.dark-theme textarea::placeholder {
+    color: #bdc3c7;
+}
